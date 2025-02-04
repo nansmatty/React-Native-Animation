@@ -15,6 +15,11 @@ const topics = [
     title: 'Basic Animation',
     screen: 'BasicAnimation',
   },
+  {
+    id: 2,
+    title: 'Interpolate Animation',
+    screen: 'Interpolate',
+  },
 ];
 
 const HomeScreen: React.FC<HomeProps> = ({navigation}) => {

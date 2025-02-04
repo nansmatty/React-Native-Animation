@@ -3,10 +3,12 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import BasicAnimationScreen from './screens/BasicAnimationScreen';
+import InterpolationScreen from './screens/InterpolationScreen';
 
 export type RootStackParamsList = {
   Home: undefined;
   BasicAnimation: undefined;
+  Interpolate: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamsList>();
@@ -16,6 +18,7 @@ const RootNavigator = () => {
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="BasicAnimation" component={BasicAnimationScreen} />
+      <Stack.Screen name="Interpolate" component={InterpolationScreen} />
     </Stack.Navigator>
   );
 };
