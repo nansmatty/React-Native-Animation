@@ -14,6 +14,8 @@ const BasicAnimationScreen = () => {
   const translateAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.75)).current;
   const rotateAnim = useRef(new Animated.Value(0)).current;
+  const springAnim = useRef(new Animated.Value(0)).current;
+  const bounceAnim = useRef(new Animated.Value(0)).current;
 
   const handleFadeIn = () => {
     Animated.timing(fadeAni, {
@@ -72,6 +74,30 @@ const BasicAnimationScreen = () => {
     inputRange: [0, 1],
     outputRange: ['0deg', '360deg'],
   });
+
+  const handleSpring = () => {
+    Animated.spring(springAnim, {
+      toValue: 100,
+      friction: 5,
+      tension: 40,
+      useNativeDriver: true,
+    }).start(() => {
+      springAnim.setValue(0);
+    });
+  };
+
+  const handleBounce = () => {
+    Animated.sequence([
+      Animated.spring(bounceAnim, {
+        toValue: -20,
+        useNativeDriver: true,
+      }),
+      Animated.spring(bounceAnim, {
+        toValue: 0,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  };
 
   return (
     <ScrollView contentContainerStyle={styles.sectionContainer}>
@@ -146,7 +172,7 @@ const BasicAnimationScreen = () => {
         <Button title="Scale Animation" onPress={handleScaleIn} />
       </View>
 
-      {/* Rotate with translate Animation Demo */}
+      {/* Rotate Animation Demo */}
 
       <Text
         style={[
@@ -170,6 +196,58 @@ const BasicAnimationScreen = () => {
             },
           ]}></Animated.View>
         <Button title="Rotate Animation" onPress={handleRotate} />
+      </View>
+
+      {/* Spring Animation Demo */}
+
+      <Text
+        style={[
+          styles.sectionTitle,
+          {fontSize: 18, marginVertical: 20, color: '#111827'},
+        ]}>
+        Spring Animation
+      </Text>
+
+      <View style={styles.fadeAniContainer}>
+        <Animated.View
+          style={[
+            styles.viewBox,
+            styles.springBox,
+            {
+              transform: [
+                {
+                  translateX: springAnim,
+                },
+              ],
+            },
+          ]}></Animated.View>
+        <Button title="Spring Animation" onPress={handleSpring} />
+      </View>
+
+      {/* Bounce Animation Demo */}
+
+      <Text
+        style={[
+          styles.sectionTitle,
+          {fontSize: 18, marginVertical: 20, color: '#111827'},
+        ]}>
+        Bounce Animation
+      </Text>
+
+      <View style={styles.fadeAniContainer}>
+        <Animated.View
+          style={[
+            styles.viewBox,
+            styles.bounceBox,
+            {
+              transform: [
+                {
+                  translateY: bounceAnim,
+                },
+              ],
+            },
+          ]}></Animated.View>
+        <Button title="Bounce Animation" onPress={handleBounce} />
       </View>
     </ScrollView>
   );
@@ -226,6 +304,12 @@ const styles = StyleSheet.create({
   },
   rotateBox: {
     backgroundColor: '#a21caf',
+  },
+  springBox: {
+    backgroundColor: '#f43f5e',
+  },
+  bounceBox: {
+    backgroundColor: '#fad01e',
   },
 });
 
