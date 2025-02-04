@@ -4,11 +4,15 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import BasicAnimationScreen from './screens/BasicAnimationScreen';
 import InterpolationScreen from './screens/InterpolationScreen';
+import CombinedAnimationScreen from './screens/CombinedAnimationScreen';
+import GestureAnimationScreen from './screens/GestureAnimationScreen';
 
 export type RootStackParamsList = {
   Home: undefined;
   BasicAnimation: undefined;
   Interpolate: undefined;
+  Combined: undefined;
+  Gesture: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamsList>();
@@ -19,6 +23,8 @@ const RootNavigator = () => {
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="BasicAnimation" component={BasicAnimationScreen} />
       <Stack.Screen name="Interpolate" component={InterpolationScreen} />
+      <Stack.Screen name="Combined" component={CombinedAnimationScreen} />
+      <Stack.Screen name="Gesture" component={GestureAnimationScreen} />
     </Stack.Navigator>
   );
 };

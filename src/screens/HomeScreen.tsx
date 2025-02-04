@@ -20,6 +20,16 @@ const topics = [
     title: 'Interpolate Animation',
     screen: 'Interpolate',
   },
+  {
+    id: 3,
+    title: 'Combined Animation',
+    screen: 'Combined',
+  },
+  {
+    id: 4,
+    title: 'Gesture Animation',
+    screen: 'Gesture',
+  },
 ];
 
 const HomeScreen: React.FC<HomeProps> = ({navigation}) => {
