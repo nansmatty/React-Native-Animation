@@ -30,6 +30,11 @@ const topics = [
     title: 'Gesture Animation',
     screen: 'Gesture',
   },
+  {
+    id: 5,
+    title: 'Reanimated Core Concepts',
+    screen: 'ReanimatedCoreConcepts',
+  },
 ];
 
 const HomeScreen: React.FC<HomeProps> = ({navigation}) => {
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
   sectionContainer: {
     paddingHorizontal: 10,
     paddingVertical: 20,
-    backgroundColor: '#facc15',
+    backgroundColor: '#1e40af',
     height: '100%',
   },
   sectionTitle: {
@@ -69,9 +74,17 @@ const styles = StyleSheet.create({
   touchable: {
     paddingVertical: 10,
     paddingHorizontal: 20,
-    backgroundColor: '#ca8a04',
+    backgroundColor: '#2563eb',
     marginBottom: 15,
     borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowRadius: 10,
+    elevation: 5,
+    shadowOpacity: 0.5,
   },
 
   touchableText: {
