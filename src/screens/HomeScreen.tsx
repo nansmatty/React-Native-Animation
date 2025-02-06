@@ -40,6 +40,16 @@ const topics = [
     title: 'Reanimated Animation Types',
     screen: 'ReanimatedAnimationTypes',
   },
+  {
+    id: 7,
+    title: 'Reanimated Gestures',
+    screen: 'ReanimatedGestures',
+  },
+  {
+    id: 8,
+    title: 'Reanimated Gestures Updated',
+    screen: 'ReanimatedGesturesUpdated',
+  },
 ];
 
 const HomeScreen: React.FC<HomeProps> = ({navigation}) => {
