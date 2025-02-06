@@ -47,8 +47,13 @@ const topics = [
   },
   {
     id: 8,
-    title: 'Reanimated Gestures Updated',
+    title: 'Reanimated Gestures Updated API',
     screen: 'ReanimatedGesturesUpdated',
+  },
+  {
+    id: 9,
+    title: 'Reanimated Form Validation',
+    screen: 'ReanimatedFormValidation',
   },
 ];
 

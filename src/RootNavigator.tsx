@@ -10,6 +10,7 @@ import CoreConcepts from './screens/CoreConcepts';
 import AnimationTypes from './screens/AnimationTypes';
 import ReanimatedGestures from './screens/ReanimatedGestures';
 import ReanimatedGesturesUpdated from './screens/ReanimatedGesturesUpdated';
+import ReanimatedFormValidation from './screens/ReanimatedFormValidation';
 
 export type RootStackParamsList = {
   Home: undefined;
@@ -21,6 +22,7 @@ export type RootStackParamsList = {
   ReanimatedAnimationTypes: undefined;
   ReanimatedGestures: undefined;
   ReanimatedGesturesUpdated: undefined;
+  ReanimatedFormValidation: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamsList>();
@@ -39,9 +41,14 @@ const RootNavigator = () => {
         component={AnimationTypes}
       />
       <Stack.Screen name="ReanimatedGestures" component={ReanimatedGestures} />
+
       <Stack.Screen
         name="ReanimatedGesturesUpdated"
         component={ReanimatedGesturesUpdated}
+      />
+      <Stack.Screen
+        name="ReanimatedFormValidation"
+        component={ReanimatedFormValidation}
       />
     </Stack.Navigator>
   );
